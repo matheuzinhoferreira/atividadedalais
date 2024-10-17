@@ -1,0 +1,46 @@
+1. Altere a tabela de débitos para corrigir o campo situacao_debito. Se o débito estiver vencido e não for 'Negociado' nem 'Pago', informe 'Atrasado'.
+2. Altere a tabela de débitos para corrigir o campo situacao_debito. Se o débito não estiver vencido e não for 'Pago', informe 'Pendente'.
+3. Altere a tabela de débitos para corrigir o campo data de vencimento. Se o débito estiver com a situação 'Negociado', altere o ano da data de vencimento
+para ano - 5 anos..
+4. Selecione o nome, e-mail e telefone de todas as pessoas.
+5. Liste os produtos com preço unitário acima de R$ 100.
+6. Retorne todas as vendas realizadas em uma determinada data.
+7. Mostre o nome, a data de nascimento e a idade dos fornecedores que não têm produtos em estoque.
+8. Liste os clientes que já realizaram compras com débitos vencidos.
+10. Selecione os 10 maiores devedores trazendo código, nome, idade e a soma total dos débitos vencidos e a soma total dos débitos pagos.
+11. Atualize o preço unitário de todos os produtos com estoque inferior a 10 unidades para mais 10%.
+12. Modifique o status de entrega para 'Concluído' em todas as entregas realizadas antes de '2024-01-01'.
+13. Altere todos os débitos que estão com situação = 'Atrasado' para 'Pagos' se o mesmo ter o registro na tabela de pagamento.
+15. Selecione as vendas entre o mês de dezembro de 2023 até janeiro de 2024.
+16. Liste os produtos com estoque entre 5 e 20 unidades.
+17. Retorne todas as pessoas com nomes que começam com 'A'.
+18. Selecione os produtos que não foram vendidos.
+19. Liste os produtos vendidos para os clientes 'Carla Souza', 'Larissa Ferreira'.
+20. Mostre as pessoas que são clientes OU fornecedores.
+21. Retorne todas as informações da venda com detalhes do cliente e forma de pagamento.
+22. Mostre todas as compras de um determinado produto ('Placa de Captura'), incluindo detalhes do produto.
+23. Combine os nomes dos fornecedores com os nomes dos clientes e suas respectivas idades que irão fazer no ano de 2025.
+24. Retorne todos os logradouros e bairros, indicando se pertencem ou não a uma pessoa.
+25. Selecione os produtos que têm preço unitário superior à média.
+26. Liste os clientes que fizeram compras em cidades com mais de 1 milhão de habitantes.
+
+na tabela avaliacao produto possuimos id_avaliacao id_cliente id_produto nota comentario data_avaliacao
+na tabela bairro id_bairro cep id_municipio nome
+na tabela cliente id_cliente id_pessoa cpf
+na tabela debitos id_debito id_venda id_cliente situacao_debito valor_total datavencimento
+na tabela endereco ID_ENDERECO ID_PESSOA ID_LOGRADOURO ID_BAIRRO ID_MUNICIPIO NUMERO COMPLEMENTO TIPO_ENDERECO OBSERVACAO
+na tabela forma_pagamento ID_FORMA_PAGAMENTO DESCRICAO
+na tabela forncedor  ID_FORNECEDOR ID_PESSOA CNPJ
+na tabela funcionario ID_FUNCIONARIO ID_PESSOA ID_USUARIO CARGO DATA_DE_ADMISSAO
+na tabela historico_compras_cliente ID_HISTORICO_COMPRA ID_CLIENTE ID_VENDA DATA_COMPRA VALOR_TOTAL
+na tabela HISTORICO_PRECOS ID_HISTORICO_PRECO ID_PRODUTO DATA_MODIFICACAO NOVO_PRECO
+na tabela ITENSNOTA ID_ITEM ID_NOTAFISCAL ID_PRODUTO QUANTIDADE VALOR_TOTAL
+na tabela ITENSVENDA ID_ITEM_VENDA ID_VENDA ID_PRODUTO QUANTIDADE VALOR_UNITARIO
+na tabela LOGRADOURO  ID_LOGRADOURO ID_BAIRRO NOME
+NA MUNICIPIO UF POPULACAO NOME ID_MUNICIPIO CODIGO_IBGE
+NA NOTA FISCAL ID_NOTAFISCAL DATA_EMISSAO ID_CLIENTE
+NA PAGAMENTO ID_PAGAMENTO ID_VENDA ID_FORMA_PAGAMENTO ID_DEBITO ID_CLIENTE VALOR_DEBITO VALOR_PAGO VALOR_DIFERENCA DATA_PAGAMENTO
+NA PESSOA ID_PESSOA NOME EMAIL TELEFONE DATA_NASCIMENTO
+NA PRODUTO ID_PRODUTO ID_FORNECEDOR NOME DESCRICAO PRECO_UNITARIO QUANTIDADE_ESTOQUE
+NA USARIO ID_USUARIO  NOME_USUARIO SENHA_HASH
+NA VENDA ID_VENDA ID_PESSOA DATA_VENDA VALOR_TOTAL ID_FUNCIONARIO ID_FORMA_PAGAMENTO
