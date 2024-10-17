@@ -1,0 +1,109 @@
+SELECT 
+    p.*, 
+    t.nome AS nome_tutor, 
+    t.endereco AS endereco_tutor, 
+    t.telefone AS telefone_tutor
+FROM 
+    paciente p
+LEFT JOIN 
+    tutor t ON p.id_tutor = t.id_tutor;
+    
+SELECT 
+	p.*,
+	t.*
+FROM 
+	paciente p 
+INNER JOIN
+	tutor t ON p.id_tutor = t.id_tutor;
+	
+SELECT 
+    t.*, 
+    p.nome AS nome_paciente, 
+    p.especie AS especie_paciente, 
+    p.raca AS raca_paciente
+FROM 
+    tutor t
+LEFT JOIN 
+    paciente p ON t.id_tutor = p.id_tutor;
+   
+SELECT 
+    t.*, 
+    p.*
+FROM 
+    tutor t
+INNER JOIN 
+    paciente p ON t.id_tutor = p.id_tutor;
+
+    
+SELECT 
+	m.*,
+	r.data_emissao ,
+	ir.dosagem
+FROM 
+	medicamentos m 
+LEFT JOIN 
+	itens_receita ir ON m.id_medicamento = ir.id_medicamento
+LEFT JOIN 
+	receita r ON ir.id_receita = r.id_receita;
+	
+SELECT 
+    m.*, 
+    r.data_emissao, 
+    ir.dosagem
+FROM 
+    medicamentos m
+INNER JOIN 
+    itens_receita ir ON ir.id_medicamento = m.id_medicamento
+INNER JOIN 
+    receita r ON r.id_receita = ir.id_receita;
+
+   
+SELECT 
+    r.*, 
+    p.nome AS nome_paciente, 
+    p.especie AS especie_paciente
+FROM 
+    receita r
+LEFT JOIN 
+    agendamento a ON a.id_agendamento = r.id_agendamento
+LEFT JOIN 
+    paciente p ON p.id_paciente = a.id_paciente;
+   
+SELECT 
+    r.*, 
+    p.*
+FROM 
+    receita r
+INNER JOIN 
+    agendamento a ON r.id_agendamento = a.id_agendamento
+INNER JOIN 
+    paciente p ON a.id_paciente = p.id_paciente;
+   
+SELECT 
+    r.*, 
+    m.nome AS nome_medicamento, 
+    ir.dosagem
+FROM 
+    receita r
+LEFT JOIN 
+    itens_receita ir ON r.id_receita = ir.id_receita
+LEFT JOIN 
+    medicamentos m ON ir.id_medicamento = m.id_medicamento;
+   
+SELECT 
+    r.*, 
+    m.*
+FROM 
+    receita r
+INNER JOIN 
+    itens_receita ir ON r.id_receita = ir.id_receita
+INNER JOIN 
+    medicamentos m ON ir.id_medicamento = m.id_medicamento;
+
+
+
+   
+   
+
+
+
